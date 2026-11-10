@@ -39,6 +39,11 @@ class List {
     this._checkIndex(index, this._items.length - 1);
     return this._items[index];
   }
+
+  // ===== Req 7: Length of the collection =====
+  get size() {
+    return this._items.length;
+  }
 }
 
 module.exports = { List };
