@@ -27,6 +27,12 @@ class List {
     this._checkIndex(index, this._items.length);
     this._items.splice(index, 0, value);
   }
+
+  // ===== Req 4: Mutable =====
+  set(index, value) {
+    this._checkIndex(index, this._items.length - 1);
+    this._items[index] = value;
+  }
 }
 
 module.exports = { List };
