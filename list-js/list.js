@@ -33,6 +33,12 @@ class List {
     this._checkIndex(index, this._items.length - 1);
     this._items[index] = value;
   }
+
+  // ===== Req 6: Access by index/position =====
+  get(index) {
+    this._checkIndex(index, this._items.length - 1);
+    return this._items[index];
+  }
 }
 
 module.exports = { List };
