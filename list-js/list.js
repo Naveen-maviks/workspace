@@ -1,0 +1,49 @@
+class List {
+  constructor() {
+    this._items = [];
+  }
+
+  // ===== Req 1: Support multiple data types =====
+  add(value) {
+    this._items.push(value);
+  }
+
+  toArray() {
+    return [...this._items];
+  }
+
+  // ===== Req 3: Add anywhere (front, end, in between) =====
+  _checkIndex(index, max) {
+    if (!Number.isInteger(index) || index < 0 || index > max) {
+      throw new RangeError("index out of range");
+    }
+  }
+
+  addFirst(value) {
+    this._items.unshift(value);
+  }
+
+  addAt(index, value) {
+    this._checkIndex(index, this._items.length);
+    this._items.splice(index, 0, value);
+  }
+
+  // ===== Req 4: Mutable =====
+  set(index, value) {
+    this._checkIndex(index, this._items.length - 1);
+    this._items[index] = value;
+  }
+
+  // ===== Req 6: Access by index/position =====
+  get(index) {
+    this._checkIndex(index, this._items.length - 1);
+    return this._items[index];
+  }
+
+  // ===== Req 7: Length of the collection =====
+  get size() {
+    return this._items.length;
+  }
+}
+
+module.exports = { List };
