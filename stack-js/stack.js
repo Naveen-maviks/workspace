@@ -28,6 +28,11 @@ class Stack {
     }
     return this._items[this._items.length - 1];
   }
+
+  // ===== Req 4: Size (number of items in the stack) =====
+  get size() {
+    return this._items.length;
+  }
 }
 
 module.exports = { Stack };
