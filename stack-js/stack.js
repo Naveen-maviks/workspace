@@ -33,6 +33,11 @@ class Stack {
   get size() {
     return this._items.length;
   }
+
+  // ===== Req 5: isEmpty (is the stack empty) =====
+  isEmpty() {
+    return this._items.length === 0;
+  }
 }
 
 module.exports = { Stack };
