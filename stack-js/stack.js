@@ -20,6 +20,14 @@ class Stack {
     }
     return this._items.pop();
   }
+
+  // ===== Req 3: Peek (read the top item without removing it) =====
+  peek() {
+    if (this._items.length === 0) {
+      throw new Error("stack is empty");
+    }
+    return this._items[this._items.length - 1];
+  }
 }
 
 module.exports = { Stack };
