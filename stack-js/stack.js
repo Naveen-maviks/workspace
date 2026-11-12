@@ -12,6 +12,14 @@ class Stack {
   toArray() {
     return [...this._items];
   }
+
+  // ===== Req 2: Pop (remove and return the top item) =====
+  pop() {
+    if (this._items.length === 0) {
+      throw new Error("stack is empty");
+    }
+    return this._items.pop();
+  }
 }
 
 module.exports = { Stack };
